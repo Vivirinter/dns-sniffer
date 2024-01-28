@@ -1,0 +1,38 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: 🛠️ Checkout Code
+        uses: actions/checkout@v2
+
+      - name: 🚀 Setup Go Environment
+        uses: actions/setup-go@v2
+        with:
+          go-version: ^1.17
+
+      - name: 🧪 Run Tests
+        run: |
+          echo "🏃‍♀️ Running tests..."
+          go test -v ./...
+        shell: bash
+
+      - name: 🏗️ Build Application
+        run: |
+          echo "🔨 Building application..."
+          go build -v ./...
+        shell: bash
+
+      - name: 🎉 Success
+        run: echo "🎉 All steps completed successfully!"
+        shell: bash
