@@ -21,6 +21,10 @@ jobs:
         with:
           go-version: ^1.17
 
+      - name: 📦 Install Dependencies
+        run: sudo apt-get install libpcap-dev
+        shell: bash
+
       - name: 🧪 Run Tests
         run: |
           echo "🏃‍♀️ Running tests..."
