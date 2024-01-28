@@ -24,13 +24,13 @@ jobs:
       - name: 🧪 Run Tests
         run: |
           echo "🏃‍♀️ Running tests..."
-          go test -v ./...
+          go test -v
         shell: bash
 
       - name: 🏗️ Build Application
         run: |
           echo "🔨 Building application..."
-          go build -v ./...
+          go build -v
         shell: bash
 
       - name: 🎉 Success
